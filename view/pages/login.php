@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es">    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,7 +22,7 @@
             <div class="card">
                 <div class="card-body">
                     <h2>Inicio de sesión</h2>
-                    <form action="#" method="post">
+                    <form  action="?c=<?php echo base64_encode("User"); ?>&a=<?php echo base64_encode("into"); ?>" method="post">
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Email</label>
                             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" required>
@@ -33,6 +33,16 @@
                             <input type="password" class="form-control" id="exampleInputPassword1" name="password" required>
                         </div>
                         <button type="submit" class="btn btn-success">Entrar</button>
+                        <br><br>
+                        <?php
+                            if (isset($_REQUEST['error'])) {
+                                # mensaje de error
+                                echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                    <strong>¡Error!</strong> El email o la contraseña son incorrectos. <strong>Vualva a ingresarlos</strong>.
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>';
+                            }
+                        ?>
                     </form>
                 </div>
             </div>

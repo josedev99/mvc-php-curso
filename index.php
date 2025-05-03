@@ -3,7 +3,7 @@
     session_start();
 
     #conectar a la bd
-    require_once 'model/Conexion.php';
+    require_once 'model/Connection.php';
 
     # controlador por defecto
     $controller = 'Login';

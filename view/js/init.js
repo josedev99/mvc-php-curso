@@ -1,13 +1,7 @@
-function confirmarEliminar() {
-    let respuesta = "Realmente desea eliminar";
-    if (confirm(respuesta) == true) {
-        location.href ="read.php";
-    }
+function confirmDelete() {
+    if (!confirm('¿Realmente desea eliminar?')) { return false; }
 }
 
-function confirmarSalir() {
-    let respuesta = "Realmente desea salir";
-    if (confirm(respuesta) == true) {
-        location.href ="#";
-    }
+function confirmOut() {
+    if (!confirm('¿Realmente desea cerrar sesión?')) { return false; }
 }
